@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/15 18:56:02 by jbarreir         ###   ########.fr       */
+/*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
+/*   Updated: 2026/01/15 18:54:53 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*get_next_line(int fd)
+# include <stdlib.h>
+
+#endif
