@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/17 18:43:47 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/17 20:44:20 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,27 +141,52 @@ void	flush_buf(char *buf)
 int	main(int argc, char **argv)
 {
 	char	*new_line;
-	int		fd;
+	int		*fd;
+	size_t	i;
 	int		n;
+	char	yn;
 
-	if (argc != 3)
-		return (1);
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		return (1);
-	n = atoi(argv[2]);
-	while (n)
+	if (argc == 1)
 	{
-		new_line = get_next_line(fd);
+		fd = 0;
+		printf("Enter your text: ");
+	}
+	else
+	{
+		fd = malloc(argc - 1);
+		if (!fd)
+			return (1);
+		i = 0;
+		while (i < argc - 1)
+		{ 
+			fd[i] = open(argv[1], O_RDONLY);
+			if (fd < 0)
+			{
+				while (i)
+					close(fd[--i]);
+				return (1);
+			}
+			i++;
+		}
+	}
+	yn = 'y';
+	while (yn == 'y')
+	{
+		printf("Get next line? y/n\n");
+		while (read(0, &yn, 1) > 0)
+			;
+		if (yn != 'y')
+		{
+			printf("See you later, aligator!\n");
+			return (0);
+		}
+		new_line = get_next_line(fd[i]);
 		if (!new_line)
 			return (1);
-		else
-		{
-			printf("%s", new_line);
-			free(new_line);
-		}
-		n--;
+		printf("%s", new_line);
+		free(new_line);
 	}
-	close(fd);
+	while (i)
+		close(fd[--i]);
 	return (0);
 }
