@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/17 20:44:20 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/17 22:28:38 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,6 @@ int	main(int argc, char **argv)
 	char	*new_line;
 	int		*fd;
 	size_t	i;
-	int		n;
 	char	yn;
 
 	if (argc == 1)
@@ -157,7 +156,7 @@ int	main(int argc, char **argv)
 		if (!fd)
 			return (1);
 		i = 0;
-		while (i < argc - 1)
+		while ((int)i < argc - 1)
 		{ 
 			fd[i] = open(argv[1], O_RDONLY);
 			if (fd < 0)
@@ -174,17 +173,24 @@ int	main(int argc, char **argv)
 	{
 		printf("Get next line? y/n\n");
 		while (read(0, &yn, 1) > 0)
-			;
-		if (yn != 'y')
 		{
-			printf("See you later, aligator!\n");
-			return (0);
+			if (yn == 'y')
+			{
+				new_line = get_next_line(fd[i]);
+				if (!new_line)
+					return (1);
+				printf("%s", new_line);
+				free(new_line);
+				break ;
+			}
+			else
+			{
+				printf("See you later, aligator!\n");
+				return (0);
+			}
+	
 		}
-		new_line = get_next_line(fd[i]);
-		if (!new_line)
-			return (1);
-		printf("%s", new_line);
-		free(new_line);
+		yn = 'y';
 	}
 	while (i)
 		close(fd[--i]);
