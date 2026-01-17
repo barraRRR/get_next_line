@@ -13,3 +13,12 @@ problemas de buf pequeño
 
 split style
 	funciona mejor con buf grande
+
+
+doble struc
+
+
+conclusiones
+	- hay que guardar los datos guardados del bufer entre llamadas
+	- hay que controlar cuantos datos llevamos leidos del buffer.
+	- hay que leer solo una linea.

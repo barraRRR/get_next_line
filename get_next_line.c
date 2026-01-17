@@ -6,198 +6,106 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/16 16:51:24 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/17 13:08:16 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-typedef struct	s_stash
-{
-	char			*str;
-	int				full_line;
-	struct s_stash	*next;
-}	t_stash;
-/*
-size_t	str_stash_len(t_stash *stash)
-{
-	size_t		len;
-	size_t		i;
-
-	len = 0;
-	while (stash->next)
-	{
-		len += BUFFER_SIZE;
-		stash = stash->next;
-	}
-	i = 0;
-	while (stash->buf[i] && i < BUFFER_SIZE && stash->buf[i] != '\n')
-	{
-		i++;
-		len++;
-	}
-	if (stash->buf[i] == '\n')
-		len++;
-	return (len);
-}
-
-int	find_new_line_in_buf(char *buf) // plantear si debe rastrear por NULL
-{
-	size_t		i;
-
-	i = 0;
-	while (buf[i] && i < BUFFER_SIZE)
-	{
-		if (buf[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	find_new_line_in_stash(t_stash *stash)
-{
-	while (stash)
-	{
-		if (find_new_line_in_buf(stash->buf))
-			return (1);
-		stash = stash->next;
-	}
-	return (0);
-}
-
-t_stash	*add_ptr_back(t_stash *stash)
-{
-	t_stash		*ptr;
-
-	while (stash->next)
-		stash = stash->next;
-	stash->next = ptr;
-	return (ptr);
-}
-
-char	*create_lst_from_buf(t_stash *stash, char *buf)
-{
-	size_t		i;
-	size_t		j;
-	size_t		len;
-	char		*str;
-
-	len = 0;
-	while (len < BUFFER_SIZE && buf[i] != '\n')
-	{
-		len++;
-		i++;
-		if (buf[i] == '\n')
-		{
-			stash = cpy_line(stash, buf, len, i);
-
-	*/			
-			
-
-	
-char	*my_realloc(char *str, size_t new_size)
-{
-	char		*tmp;
-	size_t		i;
-	size_t		j;
-
-	i = 0;
-	while(str[i])
-		i++;
-	tmp = malloc(sizeof(char) * i + new_size + 1);
-	j = 0;
-	while (str[j])
-	{
-		tmp[j] = str[j];
-		j++;
-	}
-	while (j < (i + new_size + 1))
-		tmp[j++] = '\0';
-	free(str);
-	return (tmp);
-}	
-
-void	go_to_last_node(t_stash **stash)
-{
-	while ((*stash)->next)
-		*stash = (*stash)->next;
-}
-
-void	copy_buf_into_stash(t_stash *stash, char *buf, int fd)
-{
-	size_t		i;
-
-	go_to_last_node(&stash);
-	if (stash->full_line)
-	{
-		stash->next = malloc(sizeof(t_stash));
-		if (stash->next)
-			return ;
-		stash = stash->next;
-		stash->full_line = 0;
-	}
-	else
-	{
-		
-	i = 0;
-	while (*tmp != '\n')
-	{
-
-
-
-
-
-
-
-
 char	*get_next_line(int fd)
 {
-	static t_stash	*stash = NULL;
-	char			buf[BUFFER_SIZE];
+	static t_stash	stash;
+	t_lst			*head;
 	char			*str;
 	int				bytes;
 
-	if (!stash)
+	if (stash.state == UNINIT || stash.buf_fd != fd)
 	{
-		stash = malloc(sizeof(t_stash *));
-		if (!stash)
+		bytes = read(fd, stash.buf, BUFFER_SIZE);
+		if (bytes < 0)
 			return (NULL);
-		stash->full_line = 0;
+		stash.buf_fd = fd;
 	}
-	while (!stash->full_line)
+	else if (stash.state == END_OF_FILE_READ)
+		return (NULL);
+	stash.state = PROCESSING;
+	head = malloc(sizeof(t_lst));
+	if (!head)
+		return (NULL);
+	while (stash.state == PROCESSING)
 	{
-		if (read(fd, buf, BUFFER_SIZE) < 0)
+		stash.state = lst_from_buf(stash, head);
+		if (bytes == 0)
+			stash.state == END_OF_FILE_READ;
+		bytes = read(fd, stash.buf, BUFFER_SIZE);
+		if (bytes < 0 || stash.state == ERROR)
 			return (NULL);
-		stash = copy_buf_into_stash(stash, buf, fd);
-
-
-
-
-	
-
-	full_line?
-
-	if (find_new_line_in_stash(stash))
-	{
-		str = cpy_stash(stash);
-		return (str);
+		stash.i = 0;
 	}
-	else
-	{
-		while (!find_new_line_in_buf(ptr->buf))
-		{
-			ptr = add_ptr_back(stash);
-			ptr = malloc(sizeof(t_stash);
-			bytes = read(fd, ptr->buf, BUFFER_SIZE);
-			if (bytes < 0)
-			{
-				// free list
-				return (NULL);
-			}
-		}
-	}
-	str = cpy_stash(stash);
+	str = line_from_lst(head);
+	lst_clear(head);
 	return (str);
 }
 
+// reads BUFFER_SIZE bytes and creates a linked list
+t_state	*lst_from_buf(t_stash stash, t_lst *ptr)
+{
+	while (stash.i < BUFFER_SIZE)
+	{
+		ptr->c = stash.buf[stash.i++];
+		if (ptr->c == '\n')
+			return (NEW_LINE_FOUND);
+		else if (ptr->c == '\0')
+			return (END_OF_FILE_READ);
+		else
+		{
+			ptr->next = malloc(sizeof(t_lst));
+			if (!ptr->next)
+				return (ERROR);
+			ptr = ptr->next;
+		}
+	}
+	return (PROCESSING);
+}
+
+// copies the linked list content into a string
+char	*line_from_lst(t_lst *head)
+{
+	char		*str;
+	t_lst		*ptr;
+	size_t		len;
+	size_t		i;
+
+	len = 0;
+	ptr = head;
+	while (ptr)
+	{
+		ptr = ptr->next;
+		len++;
+	}
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	ptr = head;
+	while (i < len)
+	{
+		str[i++] == ptr->c;
+		ptr = ptr->next;			// duda si hacemos segfault aqui
+	}
+	str[len] = '\0';
+	return (str);
+}
+
+// frees linked list
+void	lst_clear(t_lst *begin_list)
+{
+	t_lst	*ptr;
+
+	while (begin_list)
+	{
+		ptr = begin_list;
+		begin_list = begin_list->next;
+		free(ptr);
+	}
+}
