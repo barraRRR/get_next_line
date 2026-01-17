@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/17 12:51:00 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/17 18:27:49 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-typedef enum	e_state
+typedef enum e_state
 {
 	UNINIT,
 	PROCESSING,
@@ -29,18 +29,25 @@ typedef enum	e_state
 	ERROR
 }	t_state;
 
-typedef struct	s_stash
+typedef struct s_stash
 {
-	char			buf[BUFFER_SIZE];
 	int				buf_fd;
 	t_state			state;
+	ssize_t			bytes_read;
 	size_t			i;
+	char			buf[BUFFER_SIZE];
 }	t_stash;
 
-typedef struct	s_lst
+typedef struct s_lst
 {
 	char			c;
 	struct s_lst	*next;
 }	t_lst;
+
+char		*get_next_line(int fd);
+t_state		lst_from_buf(t_stash *stash, t_lst **ptr);
+char		*line_from_lst(t_lst *head);
+void		lst_clear(t_lst *begin_list);
+void		flush_buf(char *buf);
 
 #endif

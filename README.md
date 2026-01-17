@@ -22,3 +22,8 @@ conclusiones
 	- hay que guardar los datos guardados del bufer entre llamadas
 	- hay que controlar cuantos datos llevamos leidos del buffer.
 	- hay que leer solo una linea.
+
+
+YouTube | [Learn How to Use the read() System Call in C to Read Files](https://www.youtube.com/watch?v=jYQPGkJHFr8)
+YouTube | [Static Variables In C Programming Language](https://www.youtube.com/watch?v=MVeN3GDwjUg)
+YouTube | [C structs 🏠](https://youtu.be/oKXP1HZ8xIs?si=UcOuFMv0SPqruzh7)
