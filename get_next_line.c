@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/17 22:28:38 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/18 18:18:53 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,40 +19,56 @@ char	*get_next_line(int fd)
 	t_lst			*ptr;
 	char			*str;
 
-	if ((stash.state == UNINIT || stash.buf_fd != fd) && fd != 0)
+	if (fd == -1)
+	{
+		free(stash.buf_in);
+		return (NULL);
+	}
+	else if (stash.state == END_OF_FILE_READ)
+		return (NULL);
+	else if (stash.state == UNINIT && fd != 0)
 	{
 		stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
 		if (stash.bytes_read < 0)
 			return (NULL);
-		stash.buf_fd = fd;
 	}
-	else if (stash.state == END_OF_FILE_READ)
-		return (NULL);
+	else if (stash.state == UNINIT && fd == 0)
+	{
+		head = lst_from_in(&stash);
+		stash.buf_in = line_from_lst(head);
+		free(head);
+	}
 	stash.state = PROCESSING;
 	head = malloc(sizeof(t_lst));
 	if (!head)
 		return (NULL);
 	ptr = head;
-	while (stash.state == PROCESSING)
+	if (fd == 0)
+		while (stash.state == PROCESSING)
+			stash.state = lst_from_buf(stash.buf_in, &ptr, &stash.i);
+	else
 	{
-		stash.state = lst_from_buf(&stash, &ptr);
-		if (stash.state == NEW_LINE_FOUND || stash.state == END_OF_FILE_READ)
+		while (stash.state == PROCESSING)
 		{
-			ptr = head;
-			break ;
-		}
-		else if (!stash.bytes_read && stash.i == BUFFER_SIZE)
-			stash.state = END_OF_FILE_READ;
-		else
-		{
-			flush_buf(stash.buf);
-			stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
-			if (stash.bytes_read < 0 || stash.state == ERROR)
+			stash.state = lst_from_buf(stash.buf, &ptr, &stash.i);
+			if (stash.state == NEW_LINE_FOUND || stash.state == END_OF_FILE_READ)
 			{
-				lst_clear(head);
-				return (NULL);
+				ptr = head;
+				break ;
 			}
-			stash.i = 0;
+			else if (!stash.bytes_read && stash.i == BUFFER_SIZE)
+				stash.state = END_OF_FILE_READ;
+			else
+			{
+				flush_buf(stash.buf);
+				stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
+				if (stash.bytes_read < 0 || stash.state == ERROR)
+				{
+					lst_clear(head);
+					return (NULL);
+				}
+				stash.i = 0;
+			}
 		}
 	}
 	str = line_from_lst(head);
@@ -61,13 +77,15 @@ char	*get_next_line(int fd)
 }
 
 // reads BUFFER_SIZE bytes and creates a linked list
-t_state	lst_from_buf(t_stash *stash, t_lst **ptr)
+t_state	lst_from_buf(char *buf, t_lst **ptr, size_t *i)
 {
-	while ((*stash).i < BUFFER_SIZE)
+	while (buf[*i] && *i < BUFFER_SIZE)
 	{
-		(*ptr)->c = (*stash).buf[(*stash).i++];
+		(*ptr)->c = buf[(*i)++];
 		if ((*ptr)->c == '\n')
 			return (NEW_LINE_FOUND);
+		else if ((*ptr)->c == '\0')
+			return (END_OF_FILE_READ);
 		else
 		{
 			(*ptr)->next = malloc(sizeof(t_lst));
@@ -108,91 +126,76 @@ char	*line_from_lst(t_lst *head)
 	return (str);
 }
 
-// frees linked list
-void	lst_clear(t_lst *begin_list)
+// reads from stdin into an allocated buffer
+t_lst	*lst_from_in(t_stash *stash)
 {
-	t_lst	*ptr;
+	ssize_t		bytes;
+	t_lst		*head;
+	t_lst		*ptr;
 
-	while (begin_list)
+	bytes = 1;
+	head = malloc(sizeof(t_lst));
+	if (!head)
+		return (NULL);
+	ptr = head;
+	while (bytes > 0)
 	{
-		ptr = begin_list;
-		begin_list = begin_list->next;
-		free(ptr);
-	}
-}
-
-// clears the stash buffer
-void	flush_buf(char *buf)
-{
-	size_t		i;
-
-	i = 0;
-	while (i < BUFFER_SIZE)
-		buf[i++] = '\0';
-}
-
-/*-----------------------------------------*/
-/*------- MAIN TESTER --- jbarreir --------*/
-/*-----------------------------------------*/
-
-#include <fcntl.h>
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	char	*new_line;
-	int		*fd;
-	size_t	i;
-	char	yn;
-
-	if (argc == 1)
-	{
-		fd = 0;
-		printf("Enter your text: ");
-	}
-	else
-	{
-		fd = malloc(argc - 1);
-		if (!fd)
-			return (1);
-		i = 0;
-		while ((int)i < argc - 1)
-		{ 
-			fd[i] = open(argv[1], O_RDONLY);
-			if (fd < 0)
-			{
-				while (i)
-					close(fd[--i]);
-				return (1);
-			}
-			i++;
-		}
-	}
-	yn = 'y';
-	while (yn == 'y')
-	{
-		printf("Get next line? y/n\n");
-		while (read(0, &yn, 1) > 0)
+		stash->i = 0;
+		flush_buf(stash->buf);
+		bytes = read(0, stash->buf, BUFFER_SIZE);
+		while ((int)stash->i < bytes)
 		{
-			if (yn == 'y')
+			ptr->c = stash->buf[stash->i++];
+			if ((int)stash->i < bytes || bytes == BUFFER_SIZE)
 			{
-				new_line = get_next_line(fd[i]);
-				if (!new_line)
-					return (1);
-				printf("%s", new_line);
-				free(new_line);
-				break ;
+				ptr->next = malloc(sizeof(t_lst));
+				if (!ptr->next)
+					return (NULL);
+				ptr = ptr->next;
 			}
 			else
-			{
-				printf("See you later, aligator!\n");
-				return (0);
-			}
-	
+				ptr->next = (NULL);
 		}
-		yn = 'y';
 	}
-	while (i)
-		close(fd[--i]);
-	return (0);
+	if (bytes < 0)
+	{
+		lst_clear(head);
+		return (NULL);
+	}
+	return (head);
 }
+
+/*
+t_lst   *lst_from_in(t_stash *stash)
+{
+    ssize_t     bytes;
+    t_lst       *head = NULL;
+    t_lst       *ptr = NULL;
+
+    while ((bytes = read(0, stash->buf, BUFFER_SIZE)) > 0)
+    {
+        stash->i = 0;
+        while ((int)stash->i < bytes)
+        {
+            t_lst *new_node = malloc(sizeof(t_lst));
+            if (!new_node)
+                return (lst_clear(head), NULL); // Limpiar si falla el malloc
+            
+            new_node->c = stash->buf[stash->i++];
+            new_node->next = NULL;
+
+            if (!head) // Primer nodo
+                head = new_node;
+            else
+                ptr->next = new_node;
+            
+            ptr = new_node;
+        }
+    }
+
+    if (bytes < 0) // Error en read
+        return (lst_clear(head), NULL);
+
+    return (head);
+}
+*/
