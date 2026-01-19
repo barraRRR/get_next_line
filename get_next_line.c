@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 15:25:16 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/19 18:13:53 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*get_next_line(int fd)
 {
 	static t_stash	stash;
 	t_lst			*head;
-	t_lst			*ptr;
 	char			*str;
 
 	if (stash.state == END_OF_FILE_READ)
@@ -32,11 +31,11 @@ char	*get_next_line(int fd)
 	head = malloc(sizeof(t_lst));
 	if (!head)
 		return (NULL);
-	ptr = head;
-	ptr->next = NULL;
+	head->next = NULL;
+	head->c = '\0';
 	while (stash.state == PROCESSING)
 	{
-		stash.state = lst_from_buf(&stash, &ptr);
+		stash.state = lst_from_buf(&stash, head);
 		if (stash.state == NEW_LINE_FOUND || stash.state == END_OF_FILE_READ)
 			break ;
 		else if (!stash.bytes_read && stash.i == BUFFER_SIZE)
@@ -59,21 +58,23 @@ char	*get_next_line(int fd)
 }
 
 // reads BUFFER_SIZE bytes and creates a linked list
-t_state	lst_from_buf(t_stash *stash, t_lst **ptr)
+t_state	lst_from_buf(t_stash *stash, t_lst *ptr)
 {
 	while (stash->i < BUFFER_SIZE)
 	{
 		if (stash->buf[stash->i] == '\0' || stash->bytes_read == 0)
 			return (END_OF_FILE_READ);
-		(*ptr)->c = stash->buf[stash->i++];
-		if ((*ptr)->c == '\n')
+		ptr->c = stash->buf[stash->i++];
+		if (ptr->c == '\n')
 			return (NEW_LINE_FOUND);
 		else
 		{
-			(*ptr)->next = malloc(sizeof(t_lst));
-			if (!(*ptr)->next)
+			ptr->next = malloc(sizeof(t_lst));
+			if (!ptr->next)
 				return (ERROR);
-			*ptr = (*ptr)->next;
+			ptr = ptr->next;
+			ptr->c = '\0';
+			ptr->next = NULL;
 		}
 	}
 	return (PROCESSING);
@@ -83,26 +84,19 @@ t_state	lst_from_buf(t_stash *stash, t_lst **ptr)
 char	*line_from_lst(t_lst *head)
 {
 	char		*str;
-	t_lst		*ptr;
 	size_t		len;
 	size_t		i;
 
-	len = 0;
-	ptr = head;
-	while (ptr)
-	{
-		ptr = ptr->next;
-		len++;
-	}
+	len = ft_lstsize(head);
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	ptr = head;
-	while (ptr && i < len)
+	while (head && i < len)
 	{
-		str[i++] = ptr->c;
-		ptr = ptr->next;			// duda si hacemos segfault aqui
+		str[i++] = head->c;
+		if (i < len)
+			head = head->next;
 	}
 	str[len] = '\0';
 	return (str);

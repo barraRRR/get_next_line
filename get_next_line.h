@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 15:21:53 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/19 17:50:14 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,11 @@ typedef struct s_lst
 }	t_lst;
 
 char		*get_next_line(int fd);
-t_state		lst_from_buf(t_stash *stash, t_lst **ptr);
+t_state		lst_from_buf(t_stash *stash, t_lst *ptr);
 char		*line_from_lst(t_lst *head);
 void		lst_clear(t_lst *begin_list);
 void		flush_buf(char *buf);
 t_lst		*lst_from_in(t_stash *stash);
+int			ft_lstsize(t_lst *lst);
 
 #endif

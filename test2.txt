@@ -1,0 +1,2303 @@
+╔══════════════════════════════════════════════════════════════════════
+════════╗
+║                Welcome to Francinette, a 42 tester framework!        
+║
+╚═══════════════════════╦══════════════════════════════╦═══════════════
+════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+⠋ Preparing framework⠙ Preparing framework✔ Preparing framework
+⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette⠸ Executing: norminette✖ Executing: norminette
+Setting locale to en_US
+get_next_line.c: Error!
+Error: TAB_INSTEAD_SPC      (line:  26, col:  30):	Found tab when expecting space
+Error: WRONG_SCOPE_COMMENT  (line:  26, col:  37):	Comment is invalid in this scope
+Error: WRONG_SCOPE_COMMENT  (line:  26, col:  37):	Comment is invalid in this scope
+Error: TOO_MANY_LINES       (line:  59, col:   1):	Function has more than 25 lines
+Error: TAB_INSTEAD_SPC      (line: 105, col:  25):	Found tab when expecting space
+Error: WRONG_SCOPE_COMMENT  (line: 105, col:  37):	Comment is invalid in this scope
+Error: WRONG_SCOPE_COMMENT  (line: 105, col:  37):	Comment is invalid in this scope
+get_next_line.h: OK!
+get_next_line_utils.c: Error!
+Error: BRACE_SHOULD_EOL     (line:  36, col:   1):	Expected newline after brace
+main.c: Error!
+Error: INVALID_HEADER       (line:   4, col:   1):	Missing or invalid 42 header
+Error: LINE_TOO_LONG        (line:  19, col:  89):	line too long
+Error: EMPTY_LINE_FUNCTION  (line:  29, col:   1):	Empty line in function
+Error: TOO_MANY_LINES       (line:  54, col:   1):	Function has more than 25 lines
+
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[34m[Mandatory]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [31m1.KO [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [31m2.KO [0m
+[37mfiles/41_no_nl: ==3234326== Conditional jump or move depends on uninitialised value(s)
+==3234326==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234326==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234326==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234326==    by 0x40564F: main (mandatory.cpp:45)
+==3234326== 
+==3234326== Conditional jump or move depends on uninitialised value(s)
+==3234326==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234326==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234326==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234326==    by 0x40564F: main (mandatory.cpp:45)
+==3234326== 
+==3234326== Conditional jump or move depends on uninitialised value(s)
+==3234326==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234326==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234326==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234326==    by 0x40564F: main (mandatory.cpp:45)
+==3234326== 
+==3234326== Conditional jump or move depends on uninitialised value(s)
+==3234326==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234326==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234326==    by 0x40564F: main (mandatory.cpp:45)
+==3234326== 
+==3234326== Conditional jump or move depends on uninitialised value(s)
+==3234326==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234326==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234326==    by 0x40564F: main (mandatory.cpp:45)
+==3234326== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: ==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234330==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40593A: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234330==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40593A: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234330==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40593A: main (mandatory.cpp:50)
+==3234330== 
+[32m1.OK ==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234330==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40594C: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234330==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40594C: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234330==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234330==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234330==    by 0x40594C: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234330==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234330==    by 0x40594C: main (mandatory.cpp:50)
+==3234330== 
+==3234330== Conditional jump or move depends on uninitialised value(s)
+==3234330==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234330==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234330==    by 0x40594C: main (mandatory.cpp:50)
+==3234330== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: ==3234332== Conditional jump or move depends on uninitialised value(s)
+==3234332==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234332==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234332==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234332==    by 0x405C37: main (mandatory.cpp:56)
+==3234332== 
+==3234332== Conditional jump or move depends on uninitialised value(s)
+==3234332==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234332==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234332==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234332==    by 0x405C37: main (mandatory.cpp:56)
+==3234332== 
+==3234332== Conditional jump or move depends on uninitialised value(s)
+==3234332==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234332==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234332==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234332==    by 0x405C37: main (mandatory.cpp:56)
+==3234332== 
+==3234332== Conditional jump or move depends on uninitialised value(s)
+==3234332==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234332==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234332==    by 0x405C37: main (mandatory.cpp:56)
+==3234332== 
+==3234332== Conditional jump or move depends on uninitialised value(s)
+==3234332==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234332==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234332==    by 0x405C37: main (mandatory.cpp:56)
+==3234332== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: ==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234335==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F22: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234335==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F22: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234335==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F22: main (mandatory.cpp:61)
+==3234335== 
+[32m1.OK ==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234335==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F34: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234335==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F34: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234335==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234335==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234335==    by 0x405F34: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234335==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234335==    by 0x405F34: main (mandatory.cpp:61)
+==3234335== 
+==3234335== Conditional jump or move depends on uninitialised value(s)
+==3234335==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234335==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234335==    by 0x405F34: main (mandatory.cpp:61)
+==3234335== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: ==3234339== Conditional jump or move depends on uninitialised value(s)
+==3234339==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234339==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234339==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234339==    by 0x406229: main (mandatory.cpp:72)
+==3234339== 
+==3234339== Conditional jump or move depends on uninitialised value(s)
+==3234339==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234339==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234339==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234339==    by 0x406229: main (mandatory.cpp:72)
+==3234339== 
+==3234339== Conditional jump or move depends on uninitialised value(s)
+==3234339==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234339==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234339==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234339==    by 0x406229: main (mandatory.cpp:72)
+==3234339== 
+==3234339== Conditional jump or move depends on uninitialised value(s)
+==3234339==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234339==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234339==    by 0x406229: main (mandatory.cpp:72)
+==3234339== 
+==3234339== Conditional jump or move depends on uninitialised value(s)
+==3234339==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234339==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234339==    by 0x406229: main (mandatory.cpp:72)
+==3234339== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: ==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234341==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406514: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234341==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406514: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234341==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406514: main (mandatory.cpp:77)
+==3234341== 
+[32m1.OK ==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234341==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406526: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234341==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406526: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234341==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234341==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234341==    by 0x406526: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234341==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234341==    by 0x406526: main (mandatory.cpp:77)
+==3234341== 
+==3234341== Conditional jump or move depends on uninitialised value(s)
+==3234341==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234341==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234341==    by 0x406526: main (mandatory.cpp:77)
+==3234341== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [31m6.KO [0m
+[37mfiles/multiple_line_no_nl: ==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B44: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B44: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234346==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B44: main (mandatory.cpp:92)
+==3234346== 
+[32m1.OK ==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B56: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B56: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234346==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B56: main (mandatory.cpp:92)
+==3234346== 
+[32m2.OK ==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B68: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B68: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234346==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B68: main (mandatory.cpp:92)
+==3234346== 
+[32m3.OK ==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B7A: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B7A: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234346==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B7A: main (mandatory.cpp:92)
+==3234346== 
+[32m4.OK ==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B8C: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234346==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B8C: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234346==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234346==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234346==    by 0x406B8C: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234346==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234346==    by 0x406B8C: main (mandatory.cpp:92)
+==3234346== 
+==3234346== Conditional jump or move depends on uninitialised value(s)
+==3234346==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234346==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234346==    by 0x406B8C: main (mandatory.cpp:92)
+==3234346== 
+[32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: ==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E77: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E77: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234347==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E77: main (mandatory.cpp:101)
+==3234347== 
+[32m1.OK ==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E89: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E89: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234347==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E89: main (mandatory.cpp:101)
+==3234347== 
+[32m2.OK ==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E9B: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E9B: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234347==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406E9B: main (mandatory.cpp:101)
+==3234347== 
+[32m3.OK ==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EAD: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EAD: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234347==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EAD: main (mandatory.cpp:101)
+==3234347== 
+[32m4.OK ==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EBF: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234347==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EBF: main (mandatory.cpp:101)
+==3234347== 
+==3234347== Conditional jump or move depends on uninitialised value(s)
+==3234347==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234347==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234347==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234347==    by 0x406EBF: main (mandatory.cpp:101)
+==3234347== 
+[32m5.OK [31m6.KO [0m
+[37mfiles/alternate_line_nl_no_nl: ==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071AA: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071AA: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234352==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071AA: main (mandatory.cpp:110)
+==3234352== 
+[32m1.OK [32m2.OK ==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071CE: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071CE: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234352==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071CE: main (mandatory.cpp:110)
+==3234352== 
+[32m3.OK [32m4.OK ==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071F2: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071F2: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234352==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x4071F2: main (mandatory.cpp:110)
+==3234352== 
+[32m5.OK [32m6.OK ==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x407216: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x407216: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234352==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x407216: main (mandatory.cpp:110)
+==3234352== 
+[32m7.OK [32m8.OK ==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x40723A: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234352==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x40723A: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234352==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234352==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234352==    by 0x40723A: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234352==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234352==    by 0x40723A: main (mandatory.cpp:110)
+==3234352== 
+==3234352== Conditional jump or move depends on uninitialised value(s)
+==3234352==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234352==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234352==    by 0x40723A: main (mandatory.cpp:110)
+==3234352== 
+[32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: ==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407525: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407525: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234354==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407525: main (mandatory.cpp:123)
+==3234354== 
+[32m1.OK [32m2.OK ==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407549: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407549: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234354==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407549: main (mandatory.cpp:123)
+==3234354== 
+[32m3.OK [32m4.OK ==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x40756D: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x40756D: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234354==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x40756D: main (mandatory.cpp:123)
+==3234354== 
+[32m5.OK [32m6.OK ==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407591: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407591: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234354==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x407591: main (mandatory.cpp:123)
+==3234354== 
+[32m7.OK [32m8.OK ==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x4075B5: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234354==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x4075B5: main (mandatory.cpp:123)
+==3234354== 
+==3234354== Conditional jump or move depends on uninitialised value(s)
+==3234354==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234354==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234354==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234354==    by 0x4075B5: main (mandatory.cpp:123)
+==3234354== 
+[32m9.OK [31m10.KO [0m
+[37mfiles/big_line_no_nl: ==3234355== Conditional jump or move depends on uninitialised value(s)
+==3234355==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234355==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234355==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234355==    by 0x4078A0: main (mandatory.cpp:136)
+==3234355== 
+==3234355== Conditional jump or move depends on uninitialised value(s)
+==3234355==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234355==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234355==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234355==    by 0x4078A0: main (mandatory.cpp:136)
+==3234355== 
+==3234355== Conditional jump or move depends on uninitialised value(s)
+==3234355==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234355==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234355==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234355==    by 0x4078A0: main (mandatory.cpp:136)
+==3234355== 
+==3234355== Conditional jump or move depends on uninitialised value(s)
+==3234355==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234355==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234355==    by 0x4078A0: main (mandatory.cpp:136)
+==3234355== 
+==3234355== Conditional jump or move depends on uninitialised value(s)
+==3234355==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234355==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234355==    by 0x4078A0: main (mandatory.cpp:136)
+==3234355== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: ==3234356== Conditional jump or move depends on uninitialised value(s)
+==3234356==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234356==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234356==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234356==    by 0x407B8B: main (mandatory.cpp:140)
+==3234356== 
+==3234356== Conditional jump or move depends on uninitialised value(s)
+==3234356==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234356==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234356==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234356==    by 0x407B8B: main (mandatory.cpp:140)
+==3234356== 
+==3234356== Conditional jump or move depends on uninitialised value(s)
+==3234356==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234356==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234356==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234356==    by 0x407B8B: main (mandatory.cpp:140)
+==3234356== 
+[32m1.OK [31m2.KO [0m
+[37mstdin: ==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E75: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E75: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234357==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E75: main (mandatory.cpp:145)
+==3234357== 
+[32m1.OK [32m2.OK ==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E97: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E97: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234357==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407E97: main (mandatory.cpp:145)
+==3234357== 
+[32m3.OK [32m4.OK ==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EB9: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EB9: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234357==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EB9: main (mandatory.cpp:145)
+==3234357== 
+[32m5.OK [32m6.OK ==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EDB: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EDB: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234357==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EDB: main (mandatory.cpp:145)
+==3234357== 
+[32m7.OK [32m8.OK ==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x4083B1: line_from_lst (get_next_line.c:92)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EFD: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x408414: line_from_lst (get_next_line.c:102)
+==3234357==    by 0x408273: get_next_line (get_next_line.c:56)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EFD: main (mandatory.cpp:145)
+==3234357== 
+==3234357== Conditional jump or move depends on uninitialised value(s)
+==3234357==    at 0x40846B: lst_clear (get_next_line_utils.c:20)
+==3234357==    by 0x408283: get_next_line (get_next_line.c:57)
+==3234357==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234357==    by 0x407EFD: main (mandatory.cpp:145)
+==3234357== 
+[32m9.OK [31m10.KO [0m
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [31m1.KO [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [31m2.KO [0m
+[37mfiles/41_no_nl: ==3234392== Conditional jump or move depends on uninitialised value(s)
+==3234392==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234392==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234392==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234392==    by 0x40564F: main (mandatory.cpp:45)
+==3234392== 
+==3234392== Conditional jump or move depends on uninitialised value(s)
+==3234392==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234392==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234392==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234392==    by 0x40564F: main (mandatory.cpp:45)
+==3234392== 
+==3234392== Conditional jump or move depends on uninitialised value(s)
+==3234392==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234392==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234392==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234392==    by 0x40564F: main (mandatory.cpp:45)
+==3234392== 
+==3234392== Conditional jump or move depends on uninitialised value(s)
+==3234392==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234392==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234392==    by 0x40564F: main (mandatory.cpp:45)
+==3234392== 
+==3234392== Conditional jump or move depends on uninitialised value(s)
+==3234392==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234392==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234392==    by 0x40564F: main (mandatory.cpp:45)
+==3234392== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: ==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234393==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40593A: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234393==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40593A: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234393==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40593A: main (mandatory.cpp:50)
+==3234393== 
+[32m1.OK ==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234393==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40594C: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234393==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40594C: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234393==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234393==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234393==    by 0x40594C: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234393==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234393==    by 0x40594C: main (mandatory.cpp:50)
+==3234393== 
+==3234393== Conditional jump or move depends on uninitialised value(s)
+==3234393==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234393==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234393==    by 0x40594C: main (mandatory.cpp:50)
+==3234393== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: ==3234394== Conditional jump or move depends on uninitialised value(s)
+==3234394==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234394==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234394==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234394==    by 0x405C37: main (mandatory.cpp:56)
+==3234394== 
+==3234394== Conditional jump or move depends on uninitialised value(s)
+==3234394==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234394==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234394==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234394==    by 0x405C37: main (mandatory.cpp:56)
+==3234394== 
+==3234394== Conditional jump or move depends on uninitialised value(s)
+==3234394==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234394==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234394==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234394==    by 0x405C37: main (mandatory.cpp:56)
+==3234394== 
+==3234394== Conditional jump or move depends on uninitialised value(s)
+==3234394==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234394==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234394==    by 0x405C37: main (mandatory.cpp:56)
+==3234394== 
+==3234394== Conditional jump or move depends on uninitialised value(s)
+==3234394==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234394==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234394==    by 0x405C37: main (mandatory.cpp:56)
+==3234394== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: ==3234395== Conditional jump or move depends on uninitialised value(s)
+==3234395==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234395==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234395==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234395==    by 0x405F22: main (mandatory.cpp:61)
+==3234395== 
+==3234395== Conditional jump or move depends on uninitialised value(s)
+==3234395==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234395==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234395==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234395==    by 0x405F22: main (mandatory.cpp:61)
+==3234395== 
+==3234395== Conditional jump or move depends on uninitialised value(s)
+==3234395==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234395==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234395==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234395==    by 0x405F22: main (mandatory.cpp:61)
+==3234395== 
+[32m1.OK [32m2.OK [31m3.KO [0m
+[37mfiles/43_no_nl: ==3234396== Conditional jump or move depends on uninitialised value(s)
+==3234396==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234396==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234396==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234396==    by 0x40625B: main (mandatory.cpp:72)
+==3234396== 
+==3234396== Conditional jump or move depends on uninitialised value(s)
+==3234396==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234396==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234396==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234396==    by 0x40625B: main (mandatory.cpp:72)
+==3234396== 
+==3234396== Conditional jump or move depends on uninitialised value(s)
+==3234396==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234396==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234396==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234396==    by 0x40625B: main (mandatory.cpp:72)
+==3234396== 
+==3234396== Conditional jump or move depends on uninitialised value(s)
+==3234396==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234396==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234396==    by 0x40625B: main (mandatory.cpp:72)
+==3234396== 
+==3234396== Conditional jump or move depends on uninitialised value(s)
+==3234396==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234396==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234396==    by 0x40625B: main (mandatory.cpp:72)
+==3234396== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: ==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234401==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406546: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234401==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406546: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234401==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406546: main (mandatory.cpp:77)
+==3234401== 
+[32m1.OK ==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234401==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406558: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234401==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406558: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234401==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234401==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234401==    by 0x406558: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234401==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234401==    by 0x406558: main (mandatory.cpp:77)
+==3234401== 
+==3234401== Conditional jump or move depends on uninitialised value(s)
+==3234401==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234401==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234401==    by 0x406558: main (mandatory.cpp:77)
+==3234401== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [31m6.KO [0m
+[37mfiles/multiple_line_no_nl: ==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B76: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B76: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234403==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B76: main (mandatory.cpp:92)
+==3234403== 
+[32m1.OK ==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B88: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B88: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234403==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B88: main (mandatory.cpp:92)
+==3234403== 
+[32m2.OK ==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B9A: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B9A: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234403==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406B9A: main (mandatory.cpp:92)
+==3234403== 
+[32m3.OK ==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BAC: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BAC: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234403==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BAC: main (mandatory.cpp:92)
+==3234403== 
+[32m4.OK ==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BBE: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234403==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BBE: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234403==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234403==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234403==    by 0x406BBE: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234403==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234403==    by 0x406BBE: main (mandatory.cpp:92)
+==3234403== 
+==3234403== Conditional jump or move depends on uninitialised value(s)
+==3234403==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234403==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234403==    by 0x406BBE: main (mandatory.cpp:92)
+==3234403== 
+[32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: ==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EA9: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EA9: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234404==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EA9: main (mandatory.cpp:101)
+==3234404== 
+[32m1.OK ==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EBB: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EBB: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234404==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EBB: main (mandatory.cpp:101)
+==3234404== 
+[32m2.OK ==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406ECD: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406ECD: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234404==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406ECD: main (mandatory.cpp:101)
+==3234404== 
+[32m3.OK ==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EDF: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EDF: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234404==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EDF: main (mandatory.cpp:101)
+==3234404== 
+[32m4.OK ==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EF1: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234404==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EF1: main (mandatory.cpp:101)
+==3234404== 
+==3234404== Conditional jump or move depends on uninitialised value(s)
+==3234404==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234404==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234404==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234404==    by 0x406EF1: main (mandatory.cpp:101)
+==3234404== 
+[32m5.OK [31m6.KO [0m
+[37mfiles/alternate_line_nl_no_nl: ==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x4071DC: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x4071DC: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234405==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x4071DC: main (mandatory.cpp:110)
+==3234405== 
+[32m1.OK [32m2.OK ==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407200: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407200: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234405==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407200: main (mandatory.cpp:110)
+==3234405== 
+[32m3.OK [32m4.OK ==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407224: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407224: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234405==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407224: main (mandatory.cpp:110)
+==3234405== 
+[32m5.OK [32m6.OK ==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407248: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407248: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234405==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x407248: main (mandatory.cpp:110)
+==3234405== 
+[32m7.OK [32m8.OK ==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x40726C: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234405==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x40726C: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234405==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234405==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234405==    by 0x40726C: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234405==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234405==    by 0x40726C: main (mandatory.cpp:110)
+==3234405== 
+==3234405== Conditional jump or move depends on uninitialised value(s)
+==3234405==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234405==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234405==    by 0x40726C: main (mandatory.cpp:110)
+==3234405== 
+[32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: ==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x407557: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x407557: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234406==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x407557: main (mandatory.cpp:123)
+==3234406== 
+[32m1.OK [32m2.OK ==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40757B: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40757B: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234406==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40757B: main (mandatory.cpp:123)
+==3234406== 
+[32m3.OK [32m4.OK ==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40759F: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40759F: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234406==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x40759F: main (mandatory.cpp:123)
+==3234406== 
+[32m5.OK [32m6.OK ==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075C3: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075C3: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234406==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075C3: main (mandatory.cpp:123)
+==3234406== 
+[32m7.OK [32m8.OK ==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075E7: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234406==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075E7: main (mandatory.cpp:123)
+==3234406== 
+==3234406== Conditional jump or move depends on uninitialised value(s)
+==3234406==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234406==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234406==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234406==    by 0x4075E7: main (mandatory.cpp:123)
+==3234406== 
+[32m9.OK [31m10.KO [0m
+[37mfiles/big_line_no_nl: ==3234407== Conditional jump or move depends on uninitialised value(s)
+==3234407==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234407==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234407==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234407==    by 0x4078D2: main (mandatory.cpp:136)
+==3234407== 
+==3234407== Conditional jump or move depends on uninitialised value(s)
+==3234407==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234407==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234407==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234407==    by 0x4078D2: main (mandatory.cpp:136)
+==3234407== 
+==3234407== Conditional jump or move depends on uninitialised value(s)
+==3234407==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234407==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234407==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234407==    by 0x4078D2: main (mandatory.cpp:136)
+==3234407== 
+==3234407== Conditional jump or move depends on uninitialised value(s)
+==3234407==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234407==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234407==    by 0x4078D2: main (mandatory.cpp:136)
+==3234407== 
+==3234407== Conditional jump or move depends on uninitialised value(s)
+==3234407==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234407==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234407==    by 0x4078D2: main (mandatory.cpp:136)
+==3234407== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: ==3234408== Conditional jump or move depends on uninitialised value(s)
+==3234408==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234408==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234408==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234408==    by 0x407BBD: main (mandatory.cpp:140)
+==3234408== 
+==3234408== Conditional jump or move depends on uninitialised value(s)
+==3234408==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234408==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234408==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234408==    by 0x407BBD: main (mandatory.cpp:140)
+==3234408== 
+==3234408== Conditional jump or move depends on uninitialised value(s)
+==3234408==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234408==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234408==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234408==    by 0x407BBD: main (mandatory.cpp:140)
+==3234408== 
+[32m1.OK [31m2.KO [0m
+[37mstdin: ==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EA7: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EA7: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234409==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EA7: main (mandatory.cpp:145)
+==3234409== 
+[32m1.OK [32m2.OK ==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EC9: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EC9: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234409==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EC9: main (mandatory.cpp:145)
+==3234409== 
+[32m3.OK [32m4.OK ==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EEB: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EEB: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234409==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407EEB: main (mandatory.cpp:145)
+==3234409== 
+[32m5.OK [32m6.OK ==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F0D: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F0D: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234409==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F0D: main (mandatory.cpp:145)
+==3234409== 
+[32m7.OK [32m8.OK ==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x4083E4: line_from_lst (get_next_line.c:92)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F2F: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x408447: line_from_lst (get_next_line.c:102)
+==3234409==    by 0x4082A5: get_next_line (get_next_line.c:56)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F2F: main (mandatory.cpp:145)
+==3234409== 
+==3234409== Conditional jump or move depends on uninitialised value(s)
+==3234409==    at 0x40849E: lst_clear (get_next_line_utils.c:20)
+==3234409==    by 0x4082B5: get_next_line (get_next_line.c:57)
+==3234409==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234409==    by 0x407F2F: main (mandatory.cpp:145)
+==3234409== 
+[32m9.OK [31m10.KO [0m
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [31m1.KO [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [31m2.KO [0m
+[37mfiles/41_no_nl: ==3234479== Conditional jump or move depends on uninitialised value(s)
+==3234479==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234479==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234479==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234479==    by 0x40564F: main (mandatory.cpp:45)
+==3234479== 
+==3234479== Conditional jump or move depends on uninitialised value(s)
+==3234479==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234479==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234479==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234479==    by 0x40564F: main (mandatory.cpp:45)
+==3234479== 
+==3234479== Conditional jump or move depends on uninitialised value(s)
+==3234479==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234479==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234479==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234479==    by 0x40564F: main (mandatory.cpp:45)
+==3234479== 
+==3234479== Conditional jump or move depends on uninitialised value(s)
+==3234479==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234479==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234479==    by 0x40564F: main (mandatory.cpp:45)
+==3234479== 
+==3234479== Conditional jump or move depends on uninitialised value(s)
+==3234479==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234479==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234479==    by 0x40564F: main (mandatory.cpp:45)
+==3234479== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: ==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234480==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40593A: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234480==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40593A: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234480==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40593A: main (mandatory.cpp:50)
+==3234480== 
+[32m1.OK ==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234480==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40594C: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234480==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40594C: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234480==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234480==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234480==    by 0x40594C: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234480==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234480==    by 0x40594C: main (mandatory.cpp:50)
+==3234480== 
+==3234480== Conditional jump or move depends on uninitialised value(s)
+==3234480==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234480==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234480==    by 0x40594C: main (mandatory.cpp:50)
+==3234480== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: ==3234481== Conditional jump or move depends on uninitialised value(s)
+==3234481==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234481==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234481==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234481==    by 0x405C37: main (mandatory.cpp:56)
+==3234481== 
+==3234481== Conditional jump or move depends on uninitialised value(s)
+==3234481==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234481==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234481==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234481==    by 0x405C37: main (mandatory.cpp:56)
+==3234481== 
+==3234481== Conditional jump or move depends on uninitialised value(s)
+==3234481==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234481==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234481==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234481==    by 0x405C37: main (mandatory.cpp:56)
+==3234481== 
+==3234481== Conditional jump or move depends on uninitialised value(s)
+==3234481==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234481==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234481==    by 0x405C37: main (mandatory.cpp:56)
+==3234481== 
+==3234481== Conditional jump or move depends on uninitialised value(s)
+==3234481==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234481==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234481==    by 0x405C37: main (mandatory.cpp:56)
+==3234481== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: ==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234482==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F22: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234482==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F22: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234482==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F22: main (mandatory.cpp:61)
+==3234482== 
+[32m1.OK ==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234482==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F34: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234482==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F34: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234482==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234482==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234482==    by 0x405F34: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234482==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234482==    by 0x405F34: main (mandatory.cpp:61)
+==3234482== 
+==3234482== Conditional jump or move depends on uninitialised value(s)
+==3234482==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234482==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234482==    by 0x405F34: main (mandatory.cpp:61)
+==3234482== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: ==3234483== Conditional jump or move depends on uninitialised value(s)
+==3234483==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234483==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234483==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234483==    by 0x406229: main (mandatory.cpp:72)
+==3234483== 
+==3234483== Conditional jump or move depends on uninitialised value(s)
+==3234483==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234483==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234483==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234483==    by 0x406229: main (mandatory.cpp:72)
+==3234483== 
+==3234483== Conditional jump or move depends on uninitialised value(s)
+==3234483==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234483==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234483==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234483==    by 0x406229: main (mandatory.cpp:72)
+==3234483== 
+==3234483== Conditional jump or move depends on uninitialised value(s)
+==3234483==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234483==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234483==    by 0x406229: main (mandatory.cpp:72)
+==3234483== 
+==3234483== Conditional jump or move depends on uninitialised value(s)
+==3234483==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234483==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234483==    by 0x406229: main (mandatory.cpp:72)
+==3234483== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: ==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234488==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406514: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234488==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406514: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234488==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406514: main (mandatory.cpp:77)
+==3234488== 
+[32m1.OK ==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234488==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406526: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234488==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406526: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234488==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234488==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234488==    by 0x406526: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234488==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234488==    by 0x406526: main (mandatory.cpp:77)
+==3234488== 
+==3234488== Conditional jump or move depends on uninitialised value(s)
+==3234488==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234488==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234488==    by 0x406526: main (mandatory.cpp:77)
+==3234488== 
+[32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [31m6.KO [0m
+[37mfiles/multiple_line_no_nl: ==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B44: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B44: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234490==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B44: main (mandatory.cpp:92)
+==3234490== 
+[32m1.OK ==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B56: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B56: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234490==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B56: main (mandatory.cpp:92)
+==3234490== 
+[32m2.OK ==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B68: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B68: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234490==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B68: main (mandatory.cpp:92)
+==3234490== 
+[32m3.OK ==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B7A: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B7A: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234490==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B7A: main (mandatory.cpp:92)
+==3234490== 
+[32m4.OK ==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B8C: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234490==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B8C: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234490==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234490==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234490==    by 0x406B8C: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234490==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234490==    by 0x406B8C: main (mandatory.cpp:92)
+==3234490== 
+==3234490== Conditional jump or move depends on uninitialised value(s)
+==3234490==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234490==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234490==    by 0x406B8C: main (mandatory.cpp:92)
+==3234490== 
+[32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: ==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E77: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E77: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234491==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E77: main (mandatory.cpp:101)
+==3234491== 
+[32m1.OK ==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E89: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E89: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234491==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E89: main (mandatory.cpp:101)
+==3234491== 
+[32m2.OK ==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E9B: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E9B: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234491==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406E9B: main (mandatory.cpp:101)
+==3234491== 
+[32m3.OK ==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EAD: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EAD: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234491==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EAD: main (mandatory.cpp:101)
+==3234491== 
+[32m4.OK ==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EBF: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234491==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EBF: main (mandatory.cpp:101)
+==3234491== 
+==3234491== Conditional jump or move depends on uninitialised value(s)
+==3234491==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234491==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234491==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234491==    by 0x406EBF: main (mandatory.cpp:101)
+==3234491== 
+[32m5.OK [31m6.KO [0m
+[37mfiles/alternate_line_nl_no_nl: ==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071AA: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071AA: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234492==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071AA: main (mandatory.cpp:110)
+==3234492== 
+[32m1.OK [32m2.OK ==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071CE: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071CE: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234492==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071CE: main (mandatory.cpp:110)
+==3234492== 
+[32m3.OK [32m4.OK ==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071F2: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071F2: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234492==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x4071F2: main (mandatory.cpp:110)
+==3234492== 
+[32m5.OK [32m6.OK ==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x407216: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x407216: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234492==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x407216: main (mandatory.cpp:110)
+==3234492== 
+[32m7.OK [32m8.OK ==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x40723A: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234492==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x40723A: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234492==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234492==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234492==    by 0x40723A: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234492==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234492==    by 0x40723A: main (mandatory.cpp:110)
+==3234492== 
+==3234492== Conditional jump or move depends on uninitialised value(s)
+==3234492==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234492==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234492==    by 0x40723A: main (mandatory.cpp:110)
+==3234492== 
+[32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: ==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407525: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407525: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234493==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407525: main (mandatory.cpp:123)
+==3234493== 
+[32m1.OK [32m2.OK ==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407549: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407549: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234493==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407549: main (mandatory.cpp:123)
+==3234493== 
+[32m3.OK [32m4.OK ==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x40756D: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x40756D: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234493==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x40756D: main (mandatory.cpp:123)
+==3234493== 
+[32m5.OK [32m6.OK ==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407591: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407591: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234493==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x407591: main (mandatory.cpp:123)
+==3234493== 
+[32m7.OK [32m8.OK ==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x4075B5: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234493==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x4075B5: main (mandatory.cpp:123)
+==3234493== 
+==3234493== Conditional jump or move depends on uninitialised value(s)
+==3234493==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234493==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234493==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234493==    by 0x4075B5: main (mandatory.cpp:123)
+==3234493== 
+[32m9.OK [31m10.KO [0m
+[37mfiles/big_line_no_nl: ==3234494== Conditional jump or move depends on uninitialised value(s)
+==3234494==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234494==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234494==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234494==    by 0x4078A0: main (mandatory.cpp:136)
+==3234494== 
+==3234494== Conditional jump or move depends on uninitialised value(s)
+==3234494==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234494==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234494==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234494==    by 0x4078A0: main (mandatory.cpp:136)
+==3234494== 
+==3234494== Conditional jump or move depends on uninitialised value(s)
+==3234494==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234494==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234494==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234494==    by 0x4078A0: main (mandatory.cpp:136)
+==3234494== 
+==3234494== Conditional jump or move depends on uninitialised value(s)
+==3234494==    at 0x484FBFB: strcmp (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3234494==    by 0x402E2A: gnl(int, char const*) (gnl.cpp:24)
+==3234494==    by 0x4078A0: main (mandatory.cpp:136)
+==3234494== 
+==3234494== Conditional jump or move depends on uninitialised value(s)
+==3234494==    at 0x4027B7: check(bool) (check.cpp:8)
+==3234494==    by 0x402E3D: gnl(int, char const*) (gnl.cpp:24)
+==3234494==    by 0x4078A0: main (mandatory.cpp:136)
+==3234494== 
+[32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: ==3234495== Conditional jump or move depends on uninitialised value(s)
+==3234495==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234495==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234495==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234495==    by 0x407B8B: main (mandatory.cpp:140)
+==3234495== 
+==3234495== Conditional jump or move depends on uninitialised value(s)
+==3234495==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234495==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234495==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234495==    by 0x407B8B: main (mandatory.cpp:140)
+==3234495== 
+==3234495== Conditional jump or move depends on uninitialised value(s)
+==3234495==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234495==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234495==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234495==    by 0x407B8B: main (mandatory.cpp:140)
+==3234495== 
+[32m1.OK [31m2.KO [0m
+[37mstdin: ==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E75: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E75: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234496==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E75: main (mandatory.cpp:145)
+==3234496== 
+[32m1.OK [32m2.OK ==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E97: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E97: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234496==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407E97: main (mandatory.cpp:145)
+==3234496== 
+[32m3.OK [32m4.OK ==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EB9: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EB9: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234496==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EB9: main (mandatory.cpp:145)
+==3234496== 
+[32m5.OK [32m6.OK ==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EDB: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EDB: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234496==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EDB: main (mandatory.cpp:145)
+==3234496== 
+[32m7.OK [32m8.OK ==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x4083B6: line_from_lst (get_next_line.c:92)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EFD: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408419: line_from_lst (get_next_line.c:102)
+==3234496==    by 0x408275: get_next_line (get_next_line.c:56)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EFD: main (mandatory.cpp:145)
+==3234496== 
+==3234496== Conditional jump or move depends on uninitialised value(s)
+==3234496==    at 0x408470: lst_clear (get_next_line_utils.c:20)
+==3234496==    by 0x408285: get_next_line (get_next_line.c:57)
+==3234496==    by 0x402DF6: gnl(int, char const*) (gnl.cpp:20)
+==3234496==    by 0x407EFD: main (mandatory.cpp:145)
+==3234496== 
+[32m9.OK [31m10.KO [0m
+
+
+To see the tests open: /home/jbarreir/francinette/tests/get_next_line/gnlTester/tests/mandatory.cpp
+
+ℹ Running tests: fsoares (my own tests)
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:23: mandatory] Error 139 (ignored)
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:24: mandatory] Error 139 (ignored)
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;31m1.KO [0m[0;32m2.OK [0m[0;31m3_LEAKS.KO [0m
+Segmentation fault (core dumped)
+make: [Makefile:25: mandatory] Error 139 (ignored)
+⠋ Processing output⠙ Processing outputErrors found:
+
+To see the tests open: /home/jbarreir/francinette/tests/get_next_line/fsoares/tester.c
+
+
+Summary: no bonus
+
+Norminette Errors: get_next_line.c, get_next_line_utils.c, main.c
+
+Failed tests: gnlTester, fsoares
+
