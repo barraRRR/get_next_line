@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 18:13:53 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/19 20:48:07 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ char	*get_next_line(int fd)
 {
 	static t_stash	stash;
 	t_lst			*head;
+	t_lst			*ptr;
 	char			*str;
 
-	if (stash.state == END_OF_FILE_READ)
+	if (stash.state == EOF_READ)
 		return (NULL);
 	else if (stash.state == UNINIT)
 	{
-		flush_buf(stash.buf);		// probabemente reduntandante. investigar
 		stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
 		if (stash.bytes_read < 0)
 			return (NULL);
@@ -31,50 +31,63 @@ char	*get_next_line(int fd)
 	head = malloc(sizeof(t_lst));
 	if (!head)
 		return (NULL);
-	head->next = NULL;
-	head->c = '\0';
-	while (stash.state == PROCESSING)
-	{
-		stash.state = lst_from_buf(&stash, head);
-		if (stash.state == NEW_LINE_FOUND || stash.state == END_OF_FILE_READ)
-			break ;
-		else if (!stash.bytes_read && stash.i == BUFFER_SIZE)
-			stash.state = END_OF_FILE_READ;
-		else
-		{
-			flush_buf(stash.buf);
-			stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
-			if (stash.bytes_read < 0 || stash.state == ERROR)
-			{
-				lst_clear(head);
-				return (NULL);
-			}
-			stash.i = 0;
-		}
-	}
+	ptr = head;
+	if (!reader(fd, &stash, head, &ptr))
+		return (NULL);
 	str = line_from_lst(head);
-	lst_clear(head);
+	if (str)
+		lst_clear(head);
 	return (str);
 }
 
+// loops over buffer until new line is found, updating stash state
+int	reader(int fd, t_stash *stash, t_lst *head, t_lst **ptr)
+{
+	while (stash->state == PROCESSING)
+	{
+		stash->state = lst_from_buf(stash, ptr);
+		if (stash->state == ERROR)
+		{
+			lst_clear(head);
+			return (0);
+		}
+		else if (stash->state == NEW_LINE_FOUND || stash->state == EOF_READ)
+			break ;
+		else if (stash->bytes_read == 0 && stash->i == BUFFER_SIZE)
+			stash->state = EOF_READ;
+		else
+		{
+			flush_buf(stash->buf);
+			stash->bytes_read = read(fd, stash->buf, BUFFER_SIZE);
+			if (stash->bytes_read < 0 || stash->state == ERROR)
+			{
+				lst_clear(head);
+				return (0);
+			}
+			stash->i = 0;
+		}
+	}
+	return (1);
+}
+
 // reads BUFFER_SIZE bytes and creates a linked list
-t_state	lst_from_buf(t_stash *stash, t_lst *ptr)
+t_state	lst_from_buf(t_stash *stash, t_lst **ptr)
 {
 	while (stash->i < BUFFER_SIZE)
 	{
 		if (stash->buf[stash->i] == '\0' || stash->bytes_read == 0)
-			return (END_OF_FILE_READ);
-		ptr->c = stash->buf[stash->i++];
-		if (ptr->c == '\n')
+			return (EOF_READ);
+		(*ptr)->c = stash->buf[stash->i++];
+		if ((*ptr)->c == '\n')
 			return (NEW_LINE_FOUND);
 		else
 		{
-			ptr->next = malloc(sizeof(t_lst));
-			if (!ptr->next)
+			(*ptr)->next = malloc(sizeof(t_lst));
+			if (!(*ptr)->next)
 				return (ERROR);
-			ptr = ptr->next;
-			ptr->c = '\0';
-			ptr->next = NULL;
+			*ptr = (*ptr)->next;
+			(*ptr)->c = '\0';
+			(*ptr)->next = NULL;
 		}
 	}
 	return (PROCESSING);
@@ -90,7 +103,10 @@ char	*line_from_lst(t_lst *head)
 	len = ft_lstsize(head);
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
+	{
+		lst_clear(head);
 		return (NULL);
+	}
 	i = 0;
 	while (head && i < len)
 	{
