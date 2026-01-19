@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	}
 	while (1)
 	{
+		ok = 1;
 		new_line = get_next_line(fd);
 		if (!new_line)
 			return (1);
