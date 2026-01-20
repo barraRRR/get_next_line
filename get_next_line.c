@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 20:48:07 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:34:12 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ char	*get_next_line(int fd)
 	else if (stash.state == UNINIT)
 	{
 		stash.bytes_read = read(fd, stash.buf, BUFFER_SIZE);
-		if (stash.bytes_read < 0)
+		if (stash.bytes_read < 0 || (!stash.bytes_read && !stash.buf[0]))
 			return (NULL);
 	}
 	stash.state = PROCESSING;
 	head = malloc(sizeof(t_lst));
 	if (!head)
 		return (NULL);
+	head->next = NULL;
 	ptr = head;
 	if (!reader(fd, &stash, head, &ptr))
 		return (NULL);
@@ -100,9 +101,14 @@ char	*line_from_lst(t_lst *head)
 	size_t		len;
 	size_t		i;
 
+	if (!head->c)
+	{
+		lst_clear(head);
+		return (NULL);
+	}
 	len = ft_lstsize(head);
 	str = malloc(sizeof(char) * len + 1);
-	if (!str)
+	if (!str )
 	{
 		lst_clear(head);
 		return (NULL);

@@ -31,25 +31,19 @@ static int interactive_loop(int fd)
     while ((line = get_next_line(fd)))
     {
         ok = 1;
-
-        // Esperar entrada del usuario
         while (1)
         {
             if (read(0, &c, 1) != 1)
-                return (0);          // stdin cerrado → salir
-
+                return (0);
             if (c == '\n')
-                break;               // ENTER
-
-            ok = 0;                  // escribió algo
+                break;
+            ok = 0;
         }
-
         if (!ok)
         {
             free(line);
             return (0);
         }
-
 		printf("%s", line);
         free(line);
     }
@@ -68,28 +62,62 @@ void	print_ascii_art(void)
 	);
 }
 
+void	print_welcome(int argc, int lines)
+{
+	printf("welcome to get next line tester\n");
+	if (argc == 1)
+		printf("reading from stdin just one line...\n\n");
+	else if (argc == 2)
+		printf("reading from stdin %i lines\n\n", lines);
+	else if (argc == 3)
+		printf("reading from file %i lines\n\n", lines);
+}
+
 int main(int argc, char **argv)
 {
     int fd;
     int lines;
 
     if (argc == 1)
-    {
+    {   
+		lines = 1;
 		print_ascii_art();
-        lines = 1;
+		print_welcome(argc, lines);
         fd = 0;
         print_loop(fd, lines);
     }
-    else if (argc == 2)
+	else if (argc == 2) // quijote
     {
 		print_ascii_art();
-        lines = atoi(argv[1]);
+        fd = open(argv[1], O_RDONLY);
+        if (fd < 0)
+            return (1);
+		char	*new_line = get_next_line(fd);
+			if (!new_line)
+				return (0);
+		while (new_line)
+		{
+			printf("%s", new_line);
+			free(new_line);
+			new_line = get_next_line(fd);
+			if (!new_line)
+				break ;
+		}
+        close(fd);
+    }
+    else if (argc == 2)
+    {
+		lines = atoi(argv[1]);
+		print_ascii_art();
+		print_welcome(argc, lines);
         fd = 0;
         print_loop(fd, lines);
     }
     else if (argc == 3 && argv[1][0] == '-' && argv[1][1] == 'i')
     {
 		print_ascii_art();
+		printf("welcome to get next line tester\n");
+		printf("you are in interactive mode\npress enter to get next line...\n");
         fd = open(argv[2], O_RDONLY);
         if (fd < 0)
             return (1);
@@ -98,11 +126,13 @@ int main(int argc, char **argv)
     }
     else if (argc == 3)
     {
+		lines = atoi(argv[1]);
 		print_ascii_art();
-        lines = atoi(argv[1]);
+		print_welcome(argc, lines);
         fd = open(argv[2], O_RDONLY);
-        if (fd < 0 || !print_loop(fd, lines))
+        if (fd < 0)
             return (1);
+		print_loop(fd, lines);
         close(fd);
     }
 
