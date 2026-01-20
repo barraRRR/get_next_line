@@ -78,6 +78,7 @@ int main(int argc, char **argv)
     int fd;
     int lines;
 
+    // NO ARG: reads one line from stdin
     if (argc == 1)
     {   
 		lines = 1;
@@ -86,10 +87,20 @@ int main(int argc, char **argv)
         fd = 0;
         print_loop(fd, lines);
     }
-	else if (argc == 2) // quijote
+    // 1 ARG: reads x num of lines from stdin
+    else if (argc == 2)
+    {
+		lines = atoi(argv[1]);
+		print_ascii_art();
+		print_welcome(argc, lines);
+        fd = 0;
+        print_loop(fd, lines);
+    }
+    // 2 ARG: -a + file | reads whole file
+	else if (argc == 3  && argv[1][0] == '-' && argv[1][1] == 'a') // quijote
     {
 		print_ascii_art();
-        fd = open(argv[1], O_RDONLY);
+        fd = open(argv[2], O_RDONLY);
         if (fd < 0)
             return (1);
 		char	*new_line = get_next_line(fd);
@@ -105,14 +116,7 @@ int main(int argc, char **argv)
 		}
         close(fd);
     }
-    else if (argc == 2)
-    {
-		lines = atoi(argv[1]);
-		print_ascii_art();
-		print_welcome(argc, lines);
-        fd = 0;
-        print_loop(fd, lines);
-    }
+    // 2 ARG: -i + file | interactive mode
     else if (argc == 3 && argv[1][0] == '-' && argv[1][1] == 'i')
     {
 		print_ascii_art();
@@ -124,6 +128,7 @@ int main(int argc, char **argv)
 		interactive_loop(fd);
         close(fd);
     }
+    // 2 ARG: reads x num of lines from file
     else if (argc == 3)
     {
 		lines = atoi(argv[1]);

@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:55:06 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 17:48:27 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/20 17:40:48 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@ void	lst_clear(t_lst *begin_list)
 	}
 }
 
-// clears the stash buffer
-void	flush_buf(char *buf)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t		i;
+	size_t			i;
+	unsigned char	*ptr;
 
 	i = 0;
-	while (i < BUFFER_SIZE)
-		buf[i++] = '\0';
+	ptr = (unsigned char *)s;
+	while (i < n)
+		ptr[i++] = 0;
 }
 
 int	ft_lstsize(t_lst *lst)
@@ -48,4 +49,16 @@ int	ft_lstsize(t_lst *lst)
 		len++;
 	}
 	return (len);
+}
+
+t_lst	*new_node(char c)
+{
+	t_lst	*new;
+
+	new = malloc(sizeof(t_lst));
+	if (!new)
+		return (NULL);
+	new->c = c;
+	new->next = NULL;
+	return (new);
 }

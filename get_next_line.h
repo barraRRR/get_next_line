@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/19 20:40:15 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:20:13 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef enum e_state
 typedef struct s_stash
 {
 	t_state			state;
-	ssize_t			bytes_read;
+	ssize_t			bytes;
 	size_t			i;
 	char			buf[BUFFER_SIZE];
 }	t_stash;
@@ -44,12 +44,12 @@ typedef struct s_lst
 }	t_lst;
 
 char		*get_next_line(int fd);
+int			reader(int fd, t_stash *stash, t_lst *head);
 t_state		lst_from_buf(t_stash *stash, t_lst **ptr);
 char		*line_from_lst(t_lst *head);
-void		lst_clear(t_lst *begin_list);
-void		flush_buf(char *buf);
-t_lst		*lst_from_in(t_stash *stash);
 int			ft_lstsize(t_lst *lst);
-int			reader(int fd, t_stash *stash, t_lst *head, t_lst **ptr);
+t_lst		*new_node(char c);
+void		lst_clear(t_lst *begin_list);
+void		ft_bzero(void *s, size_t n);
 
 #endif
