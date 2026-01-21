@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/21 18:37:37 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/21 21:43:57 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ typedef enum e_state
 
 typedef struct s_lst
 {
-	char			c;
+	char			*buf;
+	size_t			len;
 	struct s_lst	*next;
 }	t_lst;
 
@@ -44,11 +45,12 @@ typedef struct s_stash
 }	t_stash;
 
 char		*get_next_line(int fd);
-t_state		reader(int fd, t_stash *stash, t_lst *head, size_t *len);
+t_state		reader(int fd, t_stash *stash, t_lst *head);
 void		set_state(int fd, t_stash *stash);
-char		*line_from_lst(t_lst *head, size_t len);
-t_lst		*new_node(char c);
+char		*line_from_lst(t_stash stash, t_lst *head);
+t_lst		*new_node(t_stash *stash);
 void		lst_clear(t_lst *begin_list);
 t_state		flush_and_read(int fd, t_stash *stash, t_state state);
+size_t		gnl_strlen(t_lst *ptr);
 
 #endif
