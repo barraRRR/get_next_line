@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/20 18:20:13 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/21 18:37:37 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,8 @@ typedef enum e_state
 	PROCESSING,
 	NEW_LINE_FOUND,
 	EOF_READ,
-	ERROR
+	MALLOC_ERROR
 }	t_state;
-
-typedef struct s_stash
-{
-	t_state			state;
-	ssize_t			bytes;
-	size_t			i;
-	char			buf[BUFFER_SIZE];
-}	t_stash;
 
 typedef struct s_lst
 {
@@ -43,13 +35,20 @@ typedef struct s_lst
 	struct s_lst	*next;
 }	t_lst;
 
+typedef struct s_stash
+{
+	t_state			state;
+	ssize_t			bytes;
+	ssize_t			i;
+	char			buf[BUFFER_SIZE];
+}	t_stash;
+
 char		*get_next_line(int fd);
-int			reader(int fd, t_stash *stash, t_lst *head);
-t_state		lst_from_buf(t_stash *stash, t_lst **ptr);
-char		*line_from_lst(t_lst *head);
-int			ft_lstsize(t_lst *lst);
+t_state		reader(int fd, t_stash *stash, t_lst *head, size_t *len);
+void		set_state(int fd, t_stash *stash);
+char		*line_from_lst(t_lst *head, size_t len);
 t_lst		*new_node(char c);
 void		lst_clear(t_lst *begin_list);
-void		ft_bzero(void *s, size_t n);
+t_state		flush_and_read(int fd, t_stash *stash, t_state state);
 
 #endif

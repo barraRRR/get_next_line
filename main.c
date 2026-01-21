@@ -22,14 +22,14 @@ static int	print_loop(int fd, int lines)
 	return (1);
 }
 
-static int interactive_loop(int fd)
+static int	interactive_loop(int fd)
 {
-    char    *line;
-    char    c;
-    int     ok;
+	char		*line;
+	char		c;
+	int			ok;
 
-    while ((line = get_next_line(fd)))
-    {
+	while ((line = get_next_line(fd)))
+	{
         ok = 1;
         while (1)
         {
@@ -46,8 +46,8 @@ static int interactive_loop(int fd)
         }
 		printf("%s", line);
         free(line);
-    }
-    return (1);
+	}
+	return (1);
 }
 
 void	print_ascii_art(void)
