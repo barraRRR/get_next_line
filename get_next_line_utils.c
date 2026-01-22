@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:55:06 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/21 21:55:44 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:51:47 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,23 @@ t_lst	*new_node(t_stash *stash)
 	new = malloc(sizeof(t_lst));
 	if (!new)
 		return (NULL);
-	new->buf = malloc(stash->bytes);
+	new->buf = malloc(stash->bytes - stash->i + 1);
 	if (!new->buf)
+	{
+		free(new);
 		return (NULL);
+	}
 	new->len = 0;
+	new->nl = 0;
 	while (stash->i < stash->bytes)
 	{
 		new->buf[new->len++] = stash->buf[stash->i++];
 		if (new->buf[new->len - 1] == '\n')
+		{
+			new->nl = 1;
 			break ;
+		}
 	}
 	new->next = NULL;
 	return (new);
-}
-
-size_t	gnl_strlen(t_lst *ptr)
-{
-	size_t		total_len;
-
-	total_len = 0;
-	while (ptr->next)
-	{
-		total_len += ptr->len;
-		ptr = ptr->next;
-	}
-	total_len += ptr->len;
-	return (total_len);
 }
