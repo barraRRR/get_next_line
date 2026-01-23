@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/23 09:56:30 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:41:56 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*get_next_line(int fd)
 	char			*str;
 	size_t			total_len;
 
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0 || set_state(fd, &stash[fd]) != PROCESSING)
+	if (fd < 0 || fd > 1024 || set_state(fd, &stash[fd]) != PROCESSING)
 		return (NULL);
 	head = new_node(&stash[fd]);
 	if (!head)
