@@ -3,3 +3,4 @@ a.out.dSYM
 /tests
 main.c
 main_bonus.c
+.vscode

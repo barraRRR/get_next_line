@@ -195,8 +195,7 @@ While the logic of the code is robust and handles any size, this specific implem
 
 * **The Limit**: It is **not recommended** to use a `BUFFER_SIZE` greater than **8000**.
 * **The Reason**: By declaring `static t_stash stash[1024]`, the program reserves persistent memory for 1024 structures simultaneously.
-* **The Math**: The total memory occupied in the Data/BSS segment is approximately:
-    $$1024 \times \text{BUFFER\_SIZE}$$
+* **The Math**: The total memory occupied in the Data/BSS segment is approximately: **1024 x BUFFER_SIZE**
 * **The Risk**: If the `BUFFER_SIZE` is excessively large, the program will attempt to allocate several Megabytes of static memory at once. This can lead to a **Stack Overflow** or a **Segmentation Fault** upon initialization, depending on the operating system's memory limits for the process.
 
 
