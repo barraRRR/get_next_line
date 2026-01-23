@@ -6,9 +6,9 @@ Get Next Line receives a file descriptor and reads its content using the `read()
 
 ## Description
 
-````
+```c
 char *get_next_line(int fd);
-````
+```
 **Get Next Line** is a C function that reads and returns a single line from a file descriptor.
 Calling the function repeatedly allows reading a file line by line, until reaching the end of the file.
 
