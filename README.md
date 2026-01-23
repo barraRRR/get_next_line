@@ -33,27 +33,27 @@ used in each `read()` call.
 Example:
 
 ```bash
-cc -Wall -Werror -Wextra -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c
+cc -Wall -Werror -Wextra -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c 
 ```
 #### Script
-To streamline the testing process, I use a simple Bash script (`test.sh`) to recompile with different `BUFFER_SIZE` values:
+To streamline the testing process, I use a simple Bash script (`cc_gnl.sh`) to recompile with different `BUFFER_SIZE` values:
 
 ```bash
 #!/usr/bin/env bash
 
 BUF=$1
 
-cc -Wall -Werror -Wextra -g -D BUFFER_SIZE=$BUF get_next_line.c get_next_line_utils.c main.c
+cc -Wall -Werror -Wextra -g -D BUFFER_SIZE=$BUF get_next_line.c get_next_line_utils.c main.c -o gnl_tester
 ```
 
 #### How to use the script:
 1. Give execution permissions:
 	```bash
-	chmod +x test.sh
+	chmod +x gnl_tester.sh
 	```
 2. Run it with your desired buffer size:
 	```Bash
-	./test.sh 42
+	./gnl_tester.sh 42
 	```
 The -g flag is included in the script to allow for debugging with GDB or LLDB, which is essential for tracking down memory issues.
 
@@ -71,7 +71,7 @@ After researching how static variables work in C, I considered two main approach
 I decided to use a **static buffer** for the following reasons:
 
 - The subject explicitly encourages the use of static variables.
-- Avoiding repeated `malloc` / `free` cycles simplifies memory management.
+- Using a static stash avoids repeated allocations for the reading buffer, while the linked list handles the dynamic growth of the line itself.
 - It prevents delegating the responsibility of freeing internal memory to the caller.
 - It guarantees that no memory is leaked between calls, while keeping ownership clearly inside  
   `get_next_line()`.
@@ -156,7 +156,11 @@ typedef enum e_state
 ```
 
 The state flow follows this logic:
-
+```
+UNINIT ──► PROCESSING ──┬──► NEW_LINE_FOUND ──► (Return Line)
+                        ├──► EOF_READ       ──► (Return Last Line)
+                        └──► MALLOC_ERROR   ──► (Return NULL)
+```
 - On each call, `set_state()` restores or resets the stash depending on the previous state.
 - While in **PROCESSING**, the buffer is consumed and new data is read as needed.
 - Transition to **NEW_LINE_FOUND** occurs when a newline is detected during buffer parsing.
@@ -188,6 +192,8 @@ Each element in the array represents a unique state for a specific file descript
 - **Independent State**: When `get_next_line(fd)` is called, the function accesses `stash[fd]`. This structure contains the buffer, current index, and reading state specific to that file.
 - **Persistent Memory**: Since the array is static, the data for `fd=3` remains intact even if the function is subsequently called for `fd=5`.
 - **No Cross-Contamination**: Each file descriptor "remembers" its own leftover characters (the stash) from previous reads, allowing the program to jump between different files seamlessly.
+
+_The limit of `1024` is based on the standard `OPEN_MAX` constant in many systems, but the code is adaptable by changing the array size._
 
 #### ⚠️ BUFFER_SIZE Limitations
 
