@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:48:48 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/23 09:26:47 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/23 09:56:30 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static t_stash	stash;
+	static t_stash	stash[1024];
 	t_lst			*head;
 	char			*str;
 	size_t			total_len;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || set_state(fd, &stash) != PROCESSING)
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0 || set_state(fd, &stash[fd]) != PROCESSING)
 		return (NULL);
-	head = new_node(&stash);
+	head = new_node(&stash[fd]);
 	if (!head)
 	{
-		stash.state = MALLOC_ERROR;
+		stash[fd].state = MALLOC_ERROR;
 		return (NULL);
 	}
 	str = NULL;
 	total_len = head->len;
-	stash.state = process_buffer(fd, &stash, head, &total_len);
-	if (stash.state == MALLOC_ERROR)
+	stash[fd].state = process_buffer(fd, &stash[fd], head, &total_len);
+	if (stash[fd].state == MALLOC_ERROR)
 	{
 		lst_clear(head);
 		return (NULL);
 	}
-	if (stash.state == NEW_LINE_FOUND || stash.state == EOF_READ)
+	if (stash[fd].state == NEW_LINE_FOUND || stash[fd].state == EOF_READ)
 		str = line_from_lst(head, total_len);
 	lst_clear(head);
 	return (str);

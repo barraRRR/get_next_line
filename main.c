@@ -1,6 +1,14 @@
-/*-----------------------------------------*/
-/*------- MAIN TESTER --- jbarreir --------*/
-/*-----------------------------------------*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 10:26:38 by jbarreir          #+#    #+#             */
+/*   Updated: 2026/01/23 10:44:46 by jbarreir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <fcntl.h>
@@ -50,27 +58,33 @@ static int	interactive_loop(int fd)
 	return (1);
 }
 
-void	print_ascii_art(void)
+void	print_welcome(int option, int lines)
 {
 	printf(
-	"                __                            __    .__  .__                \n"
+	"\n                __                            __    .__  .__                \n"
 	"   ____   _____/  |_    ____   ____ ___  ____/  |_  |  | |__| ____   ____   \n"
 	"  / ___\\_/ __ \\   __\\  /    \\_/ __ \\   \\/   /\\  __\\ |  | |  |/    \\_/ __ \\  \n"
 	" / /_/  >  ___/|  |   |   |  \\  ___/ >    <  |  |   |  |_|  |   |  \\  ___/  \n"
 	" \\___  / \\___  >__|   |___|  /\\___  >__/\\_ \\ |__|   |____/__|___|  /\\___  > \n"
 	"/_____/      \\/            \\/     \\/      \\/                     \\/     \\/  \n\n"
 	);
-}
-
-void	print_welcome(int argc, int lines)
-{
-	printf("welcome to get next line tester\n");
-	if (argc == 1)
-		printf("reading from stdin just one line...\n\n");
-	else if (argc == 2)
-		printf("reading from stdin %i lines\n\n", lines);
-	else if (argc == 3)
-		printf("reading from file %i lines\n\n", lines);
+	printf(
+	"┌──────────────────────────────────────────┐\n"
+	"│          WELCOME TO GNL TESTER           │\n"
+	"└──────────────────────────────────────────┘\n"
+	"                 jbarreir\n\n"
+	);
+	if (option == 1)
+		printf("reading from stdin just one line...\n");
+	else if (option == 2)
+		printf("reading from stdin %i lines\n", lines);
+	else if (option == 3)
+		printf("reading from file %i lines\n", lines);
+	else if (option == 4)
+		printf("reading all lines from file...\n");
+	else if (option == 5)
+		printf("you are in interactive mode\npress enter to get next line...\n");
+	printf("--------------------------------------------\n\n");
 }
 
 int main(int argc, char **argv)
@@ -78,28 +92,20 @@ int main(int argc, char **argv)
     int fd;
     int lines;
 
-    // NO ARG: reads one line from stdin
     if (argc == 1)
-    {   
-		lines = 1;
-		print_ascii_art();
-		print_welcome(argc, lines);
-        fd = 0;
-        print_loop(fd, lines);
+    {   // NO ARG: reads one line from stdin
+		print_welcome(1, 1);
+        print_loop(0, 1);
     }
-    // 1 ARG: reads x num of lines from stdin
     else if (argc == 2)
-    {
+    {	// 1 ARG: reads x num of lines from stdin
 		lines = atoi(argv[1]);
-		print_ascii_art();
-		print_welcome(argc, lines);
-        fd = 0;
-        print_loop(fd, lines);
+		print_welcome(2, lines);
+        print_loop(0, lines);
     }
-    // 2 ARG: -a + file | reads whole file
-	else if (argc == 3  && argv[1][0] == '-' && argv[1][1] == 'a') // quijote
-    {
-		print_ascii_art();
+	else if (argc == 3  && argv[1][0] == '-' && argv[1][1] == 'a')
+    {	// 2 ARG: -a + file | reads whole file
+		print_welcome(4, 0);
         fd = open(argv[2], O_RDONLY);
         if (fd < 0)
             return (1);
@@ -116,31 +122,25 @@ int main(int argc, char **argv)
 		}
         close(fd);
     }
-    // 2 ARG: -i + file | interactive mode
     else if (argc == 3 && argv[1][0] == '-' && argv[1][1] == 'i')
-    {
-		print_ascii_art();
-		printf("welcome to get next line tester\n");
-		printf("you are in interactive mode\npress enter to get next line...\n");
+    {	// 2 ARG: -i + file | interactive mode
+		print_welcome(5, 0);
         fd = open(argv[2], O_RDONLY);
         if (fd < 0)
             return (1);
 		interactive_loop(fd);
         close(fd);
     }
-    // 2 ARG: reads x num of lines from file
     else if (argc == 3)
-    {
+    {	// 2 ARG: reads x num of lines from file
 		lines = atoi(argv[1]);
-		print_ascii_art();
-		print_welcome(argc, lines);
+		print_welcome(3, lines);
         fd = open(argv[2], O_RDONLY);
         if (fd < 0)
             return (1);
 		print_loop(fd, lines);
         close(fd);
     }
-
     printf("\n-----------------------------------------------");
     printf("\nThanks for evaluating get_next_line by jbarreir\n");
     printf("-----------------------------------------------\n");
