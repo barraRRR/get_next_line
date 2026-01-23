@@ -1,189 +1,0 @@
-╔══════════════════════════════════════════════════════════════════════
-════════╗
-║                Welcome to Francinette, a 42 tester framework!        
-║
-╚═══════════════════════╦══════════════════════════════╦═══════════════
-════════╝
-                        ║         get_next_line        ║
-                        ╚══════════════════════════════╝
-⠋ Preparing framework⠙ Preparing framework✔ Preparing framework
-⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette⠸ Executing: norminette⠼ Executing: norminette✖ Executing: norminette
-Setting locale to en_US
-get_next_line.c: OK!
-get_next_line.h: OK!
-get_next_line_utils.c: OK!
-main.c: Error!
-Error: INVALID_HEADER       (line:   4, col:   1):	Missing or invalid 42 header
-Error: ASSIGN_IN_CONTROL    (line:  31, col:  18):	Assignment in control structure
-Error: TOO_FEW_TAB          (line:  33, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  33, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  34, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  34, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  35, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  35, col:   9):	Space on empty line
-Error: TOO_FEW_TAB          (line:  36, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  36, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  37, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  37, col:  17):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  38, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  38, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  39, col:   1):	Missing tabs for indent level
-Error: SPACE_AFTER_KW       (line:  39, col:  17):	Missing space after keyword
-Error: SPACE_REPLACE_TAB    (line:  39, col:  17):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  40, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  40, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  41, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  41, col:   9):	Space on empty line
-Error: TOO_FEW_TAB          (line:  42, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  42, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  43, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  43, col:   9):	Space on empty line
-Error: TOO_FEW_TAB          (line:  44, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  44, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  45, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  45, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  46, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  46, col:   9):	Space on empty line
-Error: TOO_FEW_TAB          (line:  48, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  48, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  56, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  56, col:  85):	line too long
-Error: TOO_FEW_TAB          (line:  57, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  57, col:  85):	line too long
-Error: TOO_FEW_TAB          (line:  58, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  58, col:  95):	line too long
-Error: TOO_FEW_TAB          (line:  59, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  59, col:  87):	line too long
-Error: TOO_FEW_TAB          (line:  60, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  60, col:  91):	line too long
-Error: TOO_FEW_TAB          (line:  61, col:   1):	Missing tabs for indent level
-Error: LINE_TOO_LONG        (line:  61, col:  93):	line too long
-Error: TOO_FEW_TAB          (line:  62, col:   1):	Missing tabs for indent level
-Error: SPACE_BEFORE_FUNC    (line:  76, col:   4):	Found space when expecting tab before function name
-Error: TOO_FEW_TAB          (line:  78, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  78, col:   5):	Found space when expecting tab
-Error: SPACE_REPLACE_TAB    (line:  78, col:   8):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  79, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  79, col:   5):	Found space when expecting tab
-Error: SPACE_REPLACE_TAB    (line:  79, col:   8):	Found space when expecting tab
-Error: SPACE_EMPTY_LINE     (line:  81, col:   5):	Space on empty line
-Error: WRONG_SCOPE_COMMENT  (line:  81, col:   5):	Comment is invalid in this scope
-Error: TOO_FEW_TAB          (line:  82, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  82, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  83, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  83, col:   5):	Found space when expecting tab
-Error: CONSECUTIVE_SPC      (line:  83, col:   6):	Two or more consecutives spaces
-Error: SPC_BEFORE_NL        (line:  83, col:   8):	Space before newline
-Error: TOO_FEW_TAB          (line:  87, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  87, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  88, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  88, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  89, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  89, col:   5):	Space on empty line
-Error: SPACE_EMPTY_LINE     (line:  90, col:   5):	Space on empty line
-Error: WRONG_SCOPE_COMMENT  (line:  90, col:   5):	Comment is invalid in this scope
-Error: TOO_FEW_TAB          (line:  91, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  91, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  92, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  92, col:   5):	Space on empty line
-Error: TOO_FEW_TAB          (line:  96, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  96, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  97, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  97, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line:  98, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  98, col:   5):	Space on empty line
-Error: SPACE_EMPTY_LINE     (line:  99, col:   5):	Space on empty line
-Error: WRONG_SCOPE_COMMENT  (line:  99, col:   5):	Comment is invalid in this scope
-Error: CONSECUTIVE_SPC      (line: 100, col:  23):	Two or more consecutives spaces
-Error: WRONG_SCOPE_COMMENT  (line: 100, col:  68):	Comment is invalid in this scope
-Error: WRONG_SCOPE_COMMENT  (line: 100, col:  68):	Comment is invalid in this scope
-Error: TOO_FEW_TAB          (line: 101, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 101, col:   5):	Space on empty line
-Error: TOO_FEW_TAB          (line: 103, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 103, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 104, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 104, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 105, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 105, col:  13):	Found space when expecting tab
-Error: WRONG_SCOPE_VAR      (line: 106, col:   1):	Variable declared in incorrect scope
-Error: DECL_ASSIGN_LINE     (line: 106, col:  27):	Declaration and assignation on a single line
-Error: TOO_MANY_TAB         (line: 107, col:   1):	Extra tabs for indent level
-Error: TOO_MANY_TAB         (line: 108, col:   1):	Extra tabs for indent level
-Error: TOO_FEW_TAB          (line: 117, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 117, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 118, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 118, col:   5):	Space on empty line
-Error: SPACE_EMPTY_LINE     (line: 119, col:   5):	Space on empty line
-Error: WRONG_SCOPE_COMMENT  (line: 119, col:   5):	Comment is invalid in this scope
-Error: TOO_FEW_TAB          (line: 120, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 120, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 121, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 121, col:   5):	Space on empty line
-Error: LINE_TOO_LONG        (line: 124, col:  82):	line too long
-Error: TOO_FEW_TAB          (line: 125, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 125, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 126, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 126, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 127, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 127, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 129, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 129, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 130, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 130, col:   5):	Space on empty line
-Error: SPACE_EMPTY_LINE     (line: 131, col:   5):	Space on empty line
-Error: WRONG_SCOPE_COMMENT  (line: 131, col:   5):	Comment is invalid in this scope
-Error: TOO_FEW_TAB          (line: 132, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 132, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 133, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 133, col:   5):	Space on empty line
-Error: TOO_FEW_TAB          (line: 137, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 137, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 138, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 138, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 139, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 139, col:  13):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 141, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 141, col:   9):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 142, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line: 142, col:   5):	Space on empty line
-Error: EMPTY_LINE_FUNCTION  (line: 143, col:   1):	Empty line in function
-Error: TOO_FEW_TAB          (line: 144, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 144, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 145, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 145, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 146, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 146, col:   5):	Found space when expecting tab
-Error: TOO_FEW_TAB          (line: 147, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line: 147, col:   5):	Found space when expecting tab
-Error: TOO_MANY_LINES       (line: 148, col:   1):	Function has more than 25 lines
-
-ℹ Running tests: fsoares (my own tests)
-[1;35mBUFFER_SIZE[0m: 1
-[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m[0;32m5_NULL_CHECK.OK [0m
-[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;32m4_NULL_CHECK.OK [0m
-[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;31m4_NULL_CHECK.KO [0m
-Segmentation fault (core dumped)
-make: [Makefile:23: mandatory] Error 139 (ignored)
-[1;35mBUFFER_SIZE[0m: 10
-[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m[0;32m5_NULL_CHECK.OK [0m
-[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;32m4_NULL_CHECK.OK [0m
-[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;31m4_NULL_CHECK.KO [0m
-Segmentation fault (core dumped)
-make: [Makefile:24: mandatory] Error 139 (ignored)
-[1;35mBUFFER_SIZE[0m: 1000000
-[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m[0;32m5_NULL_CHECK.OK [0m
-[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;32m4_NULL_CHECK.OK [0m
-[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m[0;31m4_NULL_CHECK.KO [0m
-Segmentation fault (core dumped)
-make: [Makefile:25: mandatory] Error 139 (ignored)
-⠋ Processing output⠙ Processing outputErrors found:
-
-To see the tests open: /home/jbarreir/francinette/tests/get_next_line/fsoares/tester.c
-
-
-Summary: no bonus
-
-Norminette Errors: main.c
-
-Failed tests: fsoares
-
