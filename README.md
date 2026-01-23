@@ -191,13 +191,16 @@ Each element in the array represents a unique state for a specific file descript
 
 #### ⚠️ BUFFER_SIZE Limitations
 
-While the logic of the code is robust and handles any size, this specific implementation has a physical constraint due to the use of static memory allocation:
+My implementation handles these cases by ensuring that if `read()` fails, the function cleans up the state and returns `NULL`.
 
 * **The Limit**: It is **not recommended** to use a `BUFFER_SIZE` greater than **8000**.
 * **The Reason**: By declaring `static t_stash stash[1024]`, the program reserves persistent memory for 1024 structures simultaneously.
 * **The Math**: The total memory occupied in the Data/BSS segment is approximately: **1024 x BUFFER_SIZE**
 * **The Risk**: If the `BUFFER_SIZE` is excessively large, the program will attempt to allocate several Megabytes of static memory at once. This can lead to a **Stack Overflow** or a **Segmentation Fault** upon initialization, depending on the operating system's memory limits for the process.
 
+If a negative `BUFFER_SIZE` is provided during compilation:
+- **Compilation Level**: Most modern compilers (like `cc` or `gcc`) will throw an error immediately because an array cannot have a negative size: `char buf[BUFFER_SIZE]`.
+- **System Level**: The `read()` system call expects a `size_t` (unsigned) for the number of bytes to read. Passing a negative value would be interpreted as an extremely large positive number, causing `read()` to fail and return `-1`.
 
 > **Note for the evaluator**: For performance benchmarks or large file testing, a standard `BUFFER_SIZE` of **42** or **4096** is recommended to ensure stability.
 
