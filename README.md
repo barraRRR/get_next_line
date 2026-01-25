@@ -86,7 +86,7 @@ caller to clean internal state would be poor design in this context.
 The core of this implementation relies on two main structures: a **stash** to persist data between calls and a **linked list** to accumulate line fragments.
 
 #### 1. Persistent State: `t_stash`
-Data is read from the file descriptor using `read()` into a static buffer. The `stash` structure maintains the state for each file descriptor:
+Data is read from the file descriptor using `read()` into a static buffer. The `stash` structure maintains the file descriptor state:
 
 ```c
 typedef struct s_stash
