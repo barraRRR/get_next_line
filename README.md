@@ -94,7 +94,7 @@ typedef struct s_stash
     t_state         state;   			// Current status (UNINIT, PROCESSING, NEW_LINE_FOUND, EOF_READ or MALLOC_ERROR)
     ssize_t         bytes;   			// Number of bytes actually read in the last read() call
     ssize_t         i;       			// Current index/position within the buffer 'buf'
-    char            buf[BUFFER_SIZE]; 	// Temporary storage for data read from disk
+    char            buf[BUFFER_SIZE]; 	// Temporary storage for data read from the fd
 }   t_stash;
 ```
 **How it works:**
