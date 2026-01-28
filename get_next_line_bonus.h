@@ -6,7 +6,7 @@
 /*   By: jbarreir <jbarreir@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 18:52:39 by jbarreir          #+#    #+#             */
-/*   Updated: 2026/01/23 09:25:35 by jbarreir         ###   ########.fr       */
+/*   Updated: 2026/01/28 16:22:07 by jbarreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
 # endif
 
 typedef enum e_state
